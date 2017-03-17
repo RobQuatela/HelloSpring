@@ -5,7 +5,26 @@
 	xsi:schemaLocation = "http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	
-	<bean id = "helloWorld" class = "com.tutorialspoint.HelloWorld">
-		<property name = "message" value = "Hello World!" />
+	<bean id = "helloWorld" class = "com.tutorialspoint.HelloWorld" scope = "prototype">
 	</bean>
+	
+	   <!-- A simple bean definition -->
+   <bean id = "simple" class = "com.tutorialspoint.HelloWorld" scope = "prototype">
+      <!-- collaborators and configuration for this bean go here -->
+   </bean>
+
+   <!-- A bean definition with lazy init set on -->
+   <bean id = "lazy" class = "com.tutorialspoint.HelloWorld" lazy-init = "true">
+      <!-- collaborators and configuration for this bean go here -->
+   </bean>
+
+   <!-- A bean definition with initialization method -->
+   <bean id = "init" class = "com.tutorialspoint.HelloWorld" >
+      <!-- collaborators and configuration for this bean go here -->
+   </bean>
+
+   <!-- A bean definition with destruction method -->
+   <bean id = "destruct" class = "com.tutorialspoint.HelloWorld" >
+      <!-- collaborators and configuration for this bean go here -->
+   </bean>
 </beans>
